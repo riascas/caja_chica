@@ -1,0 +1,19 @@
+
+body{
+    padding-top: 80px;
+}
+
+
+.btn-nav{
+    margin: 5px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    padding-right: 90px;
+}

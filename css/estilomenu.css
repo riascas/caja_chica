@@ -1,0 +1,73 @@
+.btn-menu{
+    width: 170px;
+    height: 170px;
+    background-color: rgb(238, 248, 182);
+    border: 1px solid black;
+    margin: 20px;
+    color: rgb(8, 4, 241);
+}
+.btn-modal{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(238, 248, 182);
+    border: 1px solid black;
+    margin: 20px;
+    color: rgb(8, 4, 241);
+}
+
+body{
+    padding-top: 80px;
+}
+
+.btn-menu:hover{
+    background-color: rgb(199, 216, 101);
+   
+}
+
+.imgbtn{
+    width: 120px;
+    height: 120px;
+}
+
+.imgbtn-modal{
+    width: 50px;
+    height: 50px;
+}
+
+.btn-nav{
+    margin: 5px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    padding-right: 90px;
+}
+
+.imgtitulomodal{
+    width: 40px;
+    height: 40px;
+}
+
+#imagenahorro{
+    width: 60px;
+    height: 60px;
+}
+
+.modal-header, .modal-footer{
+    background-color: rgb(238, 248, 182);
+}
+
+#nossobra{
+    display: none;
+}
+
+.div-form{
+    padding-top: 30px;
+    margin-top: 30px;
+    display: block;
+}

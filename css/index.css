@@ -1,0 +1,11 @@
+.container{ 
+position: absolute; /*Posicionamiento absoluto*/ 
+top: 50%; /*Desde arriba, colocar al 50% de la pantalla*/ 
+left: 50%; /*Desde la izquierda, colocar al 50% de la pantalla*/ 
+margin-left: -150px; /*Restamos la mitad de ancho de la capa para centrarla horizontalmente*/ 
+margin-top: -75px; /*Restamos la mitad de ancho de la capa para centrarla horizontalmente*/ 
+width: 361px; 
+height: 320px; 
+text-align:left; 
+} 
+
