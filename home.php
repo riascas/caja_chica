@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<?php session_start();
-require_once 'conexion.php';
-$conexion = new Conexion();
-$tipo_ingreso =  $conexion->obtener_tipo_ingresos();
-$tipo_gasto = $conexion->obtener_tipo_gastos();
+<html lang="es">
+
+
+<?php session_start (); 
+require_once  'conexion.php';
+$conexion  =  new Conexion();
+$tipo_ingreso  =   $conexion->obtener_tipo_ingresos();
+$tipo_gasto  =  $conexion->obtener_tipo_gastos();
 ?>
 
 <head>
@@ -91,50 +93,51 @@ $tipo_gasto = $conexion->obtener_tipo_gastos();
                                     <div class="form-group" style="width: 50%;height: 100%;float: left;text-align: center;margin-left: 33%;background-color: rgba(0, 0, 0, 0.4);border-radius: 15px">
                                         <div class="form-group">
                                             <label class="text-muted">Incorpore sus ingresos</label>
-                                            <input name="ingreso" type="number" class="form-control" required>
+                                            <input name="ingreso" id="ingreso"  type="number" class="form-control" required>
                                          </div>  
                                          <div class="form-group">  
                                             <label class="text-muted">Seleccione el tipo de ingreso</label>
-                                            <select name="idingreso" class="form-control">
+                                            <select id="tipo_ingreso" name="idingreso" class="form-control">
                                                 <option value="" ></option>
                                                 <?php foreach ($tipo_ingreso as $row) { ?>
                                                     <option value="<?php echo $row['ID_TIPO_INGRESOS']; ?>"><?php echo $row['NOMBRE']; ?></option>
                                                  <?php } ?>
                                             </select>
                                             <label class="text-muted">Descripcion</label><br>
-                                            <input type="text" name= "descripcion" placeholder="Ingrese una descripcion del ingreso"><br>
+                                            <input type="text" name= "descripcion" id="descripcion_ingreso" placeholder="Ingrese una descripcion del ingreso"><br>
                                             <label class="text-muted">Fecha</label><br>
-                                            <input type="date" name= "fecha" required>
+                                            <input type="date" id="fecha_ingreso" name= "fecha" required>
                                             <br><br>
                                             <div class="form-group"> 
-                                                 <input type="submit" class="btn btn-success" value="Cargar ingreso">
+                                                 <input type="submit" id="boton_cargar_ingreso" class="btn btn-success disabled" value="Cargar ingreso">
                                             </div>
                                     </div>
                                     </div>
                                 </div>
-                                    </form>                                    
+                                    </form>
+                                                                        
                                     <form action="actions.php" method="POST">
                                     <input name="action" type="hidden" value="insertar_gastos">
                                     <div class="form-group" style="width: 25%;height: 100%;float: right;text-align: center;margin-right: 15%;background-color: rgba(0, 0, 0, 0.4);border-radius: 15px">
                                         <div class="form-group">
                                             <label class="text-muted">Inserte sus gastos</label>
-                                            <input name="gastos" type="number" class="form-control" required>
+                                            <input name="gastos" id="gasto" type="number" class="form-control" required>
                                          </div>  
                                         <div class="form-group">
                                             <label class="text-muted">Seleccione el tipo de gasto</label>
-                                            <select name="gasto_nombre" class="form-control">
+                                            <select id="tipo_gasto" name="gasto_nombre" class="form-control">
                                                 <option value="" ></option>
                                                 <?php foreach ($tipo_gasto as $row) { ?>
                                                     <option value="<?php echo $row['ID_TIPO_GASTO']; ?>"><?php echo $row['NOMBRE']; ?></option>
                                                  <?php } ?>
                                             </select>
                                             <label class="text-muted">Descripcion</label> <br>
-                                                <input type="text" name= "descripcion" placeholder="Ingrese una descripcion del gasto"><br>
+                                                <input type="text" id="descripcion_gasto" name= "descripcion" placeholder="Ingrese una descripcion del gasto"><br>
                                             <label class="text-muted">Fecha</label> <br>
-                                                <input type="date" name= "fecha" required>
+                                                <input type="date" id="fecha_gasto" name= "fecha" required>
                                                 <br><br>
                                             <div class="form-group" >
-                                            <a class="btn btn-success">Ingrese gastos</a>
+                                            <input type="submit" class="btn btn-success disabled" id="boton_cargar_gasto" value="Ingrese gastos">
                                              </div>
                                           </div>  
                                         </div>                                       
@@ -196,12 +199,12 @@ $tipo_gasto = $conexion->obtener_tipo_gastos();
 
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-
+<script src="js/home.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 

@@ -36,14 +36,14 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="text-muted">Email</label>
-                                            <input name="email" type="email" class="form-control" placeholder="Ingrese tu email" required>
+                                            <input name="email" id="email" type="email" class="form-control" placeholder="Ingrese tu email" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="text-muted">Password</label>                                            
-                                            <input name="contrs" type="password" class="form-control" placeholder="Ingresa tu contraseña" required>
+                                            <input name="contrs"id="contrasenia" type="password" class="form-control" placeholder="Ingresa tu contraseña" required>
                                         </div>                                       
                                         <div class="form-group" >
-                                            <input type="submit" class="btn btn-success">Ingresar</a>
+                                            <input type="submit"id="boton_ingresar" class="btn btn-success disabled">Ingresar</a>
                                         </div>
                                         <div class="form-group">
                                             <h3 class="text-muted">Aún no estas registrado?</h3>
@@ -104,8 +104,10 @@
         </div>
     </div>
 
-
+        <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+      <script src="js/login.js"></script>
+
   </body>
 
 </html>

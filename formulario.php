@@ -35,30 +35,30 @@
                    
                                 <div class="form-group col-md-6">
                                   <label class="text-muted" for="">Nombre</label>
-                                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre" required>
+                                  <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Ingrese nombre" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                   <label class="text-muted">Apellido</label>
-                                  <input type="text" class="form-control" name="apellido" placeholder="Ingrese apellido" required>
+                                  <input type="text" id="apellido" class="form-control" name="apellido" placeholder="Ingrese apellido" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="text-muted">DNI</label>
-                                    <input type="number" class="form-control" name="dni" placeholder="Ingrese DNI" required>
+                                    <input type="number" id="dni" class="form-control" name="dni" placeholder="Ingrese DNI" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="text-muted">E-mail</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Ingrese email" required>
+                                    <input type="email" id="email" class="form-control" name="email" placeholder="Ingrese email" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="text-muted">Contraseña</label>
-                                    <input type="password" class="form-control" name="contrasenia"  placeholder="*************" required>
+                                    <input type="password" id="contrasenia" class="form-control" name="contrasenia"  placeholder="*************" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="text-muted">Confirme contraseña</label>
-                                    <input type="password" class="form-control" name="contrs" placeholder="*************" required>
+                                    <input type="password" id="contrasenia2" class="form-control" name="contrs" placeholder="*************" required>
                                 </div>
                                 <div class="form-group col-md-12">
-                                  <button class="btn btn-success pull-right" type="submit"  id="registro">Registrarse</button>
+                                  <button class="btn btn-success pull-right disabled" type="submit"  id="registro">Registrarse</button>
                                 </div>
                         </form>
                       </div>
@@ -93,6 +93,10 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    -->
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
       <script src="js/bootstrap.min.js"></script>
+
+      <script src="js/registro.js"></script>
   </body>
 </html>
