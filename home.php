@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
-
 <?php session_start (); 
 require_once  'conexion.php';
 $conexion  =  new Conexion();
 $tipo_ingreso  =   $conexion->obtener_tipo_ingresos();
 $tipo_gasto  =  $conexion->obtener_tipo_gastos();
 ?>
-
 <head>
 
     <meta charset="utf-8">
@@ -50,37 +47,48 @@ $tipo_gasto  =  $conexion->obtener_tipo_gastos();
 </head>
 
 <body>
-<div id="wrapper">
-<!-- Navigation -->
-<nav class="dropdown" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-        </button>       
-    </div>
-    <!-- /.navbar-header -->
 
-      <!-- /.dropdown-alerts -->
-      <ul>
-            </li>
-                        <!-- /.dropdown -->
-                        <li class="navbar navbar-default navbar-static-top" style="background-color: rgba(0,0,0,0.4);border-radius: 15px;margin-left: -35px; margin-top: 5px">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                                </a>
-                                <i class="text-muted">Bienvenido: <?= $_SESSION['email']?></i>
-                                <img src="img/logobanner.png" style="float: right;width: 10%;height: 5%;margin-top: -40px">
-                           
-                            <ul class="dropdown-menu dropdown-user">
-                                <li class="divider"></li>
-                                <li><a href="log_out.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
-                                </li>
-                            </ul>
-                            <!-- /.dropdown-user -->
-                        </li>
-                        <!-- /.dropdown -->
-            </li>
-        </ul> 
+<!-- Navigation -->
+    <nav class="navbar navbar-default">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                 <span class="sr-only">cambiar navegacion</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">
+                <img src="img/logobanner.png" style="height: 200%; margin-top: -10px">
+            </a>
+         </div>
+         <div class="collapse navbar-collapse navbar-ex1-collapse">
+             <ul class="nav navbar-nav">
+                 <li><a href="#">Caja de Ahorros</a></li>
+                 <li><a href="#">Pertenencias</a></li>
+                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gráficos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Gastos en Cuotas</a></li>
+                        <li><a href="#">Gastos Fijos</a></li>
+                        <li><a href="#">Gastos entre Fechas</a></li>
+                        <li><a href="#">Simulador</a></li>
+                    </ul>
+                 </li>
+             </ul>
+             <form class="navbar-form navbar-left">
+                <div class="form-group"><input type="text" class="form-control"></div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $_SESSION['NOMBRE']?><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                 </li>
+             </ul>
+         </div>
+    </nav>     
+<div id="wrapper">
         <h1 class="page-header" style="text-align: center;color:white">Bienvenido al Menú de ingresos y gastos</h1>
 
         <h3 style="text-align: center;color:white">Cargá tus ingresos o tus gastos abajo</h3>
