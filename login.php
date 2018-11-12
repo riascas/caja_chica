@@ -7,19 +7,24 @@ $email= $_POST['email'];
 
 //$contrasena= md5($_POST['contrs']);
 $contrasena= $_POST['contrs'];
-
 $consulta2 = $conexion->buscarUsuarioPorEmailyPass($email,$contrasena);
-if(is_array($consulta2)){
-    echo $consulta2['EMAIL']." ".$consulta2['DNI'];
+if ($consulta2['ID_CONFIRMADO']!=1){
+	echo "<script>alert('Aún no has activado tu cuenta. Por favor, accede a tu mail para registrarte.');
+	window.location.href='pantalla_login.php';</script>";
+}
+else{
+	if(is_array($consulta2)){
+	    echo $consulta2['EMAIL']." ".$consulta2['DNI'];
 
-    session_start();
-    $_SESSION['email']=$email;
-    $_SESSION['dni']=$consulta2['DNI'];
+	    session_start();
+	    $_SESSION['email']=$email;
+	    $_SESSION['dni']=$consulta2['DNI'];
 
-    echo "LLegue";
-    header("Location: home.php");   
-}else{
+	    echo "LLegue";
+	    header("Location: home.php");   
+	}else{
 
-    echo "Los datos son incorrectos";
+	    echo "Los datos son incorrectos";
+	}
 }
 ?>

@@ -57,7 +57,7 @@ $tipo_gasto  =  $conexion->obtener_tipo_gastos();
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">
+            <a href="home.php" class="navbar-brand">
                 <img src="img/logobanner.png" style="height: 200%; margin-top: -10px">
             </a>
          </div>
@@ -79,10 +79,10 @@ $tipo_gasto  =  $conexion->obtener_tipo_gastos();
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $_SESSION['NOMBRE']?><b class="caret"></b></a>
+                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$_SESSION['email']?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li><a href="log_out.php">Log Out</a></li>
                     </ul>
                  </li>
              </ul>
