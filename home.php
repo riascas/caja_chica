@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start (); 
-require_once  'conexion.php';
-$conexion  =  new Conexion();
-$tipo_ingreso  =   $conexion->obtener_tipo_ingresos();
-$tipo_gasto  =  $conexion->obtener_tipo_gastos();
+
+<?php
+  require_once  'conexion.php'; 
+  session_start ();
+  $email= $_SESSION['email'];
+  $sql=mysqli_query($conn,"SELECT id_sesion FROM usuarios WHERE email='$email'");
+  $val=mysqli_fetch_row($sql);
+
+  if ($val[0]!=1){
+    header("location: pantalla_login.php");
+  }
+  else{ 
+    $conexion  =  new Conexion();
+    $tipo_ingreso  =   $conexion->obtener_tipo_ingresos();
+    $tipo_gasto  =  $conexion->obtener_tipo_gastos();
+  }
 ?>
 <head>
 
