@@ -6,6 +6,7 @@ $conexion = new Conexion();
 $email= $_POST['email'];
 
 //$contrasena= md5($_POST['contrs']);
+$sql="UPDATE usuarios SET id_sesion=1 WHERE email='$email'";
 $contrasena= $_POST['contrs'];
 $consulta2 = $conexion->buscarUsuarioPorEmailyPass($email,$contrasena);
 if ($consulta2['ID_CONFIRMADO']!=1){
@@ -19,6 +20,7 @@ else{
 	    session_start();
 	    $_SESSION['email']=$email;
 	    $_SESSION['dni']=$consulta2['DNI'];
+	    mysqli_query($conn, $sql);
 
 	    echo "LLegue";
 	    header("Location: home.php");   
