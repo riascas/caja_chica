@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-  
+<?php
+  require_once  'conexion.php'; 
+  session_start ();
+  $sql=mysqli_query($conn,"SELECT id_sesion FROM usuarios WHERE id_sesion=1");
+  $hay= mysqli_num_rows($sql); 
+
+  if ($hay>0){
+    echo("<script>alert('Hay una sesión en curso. Deslogueate desde la pantalla principal para poder acceder con otra cuenta.');
+      window.location.href='home.php'</script>");
+  }
+?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
