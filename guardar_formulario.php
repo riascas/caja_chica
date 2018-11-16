@@ -31,36 +31,61 @@ if ($contrs!=$contrs2) {
   echo "<script>alert('Las contraseñas no coinciden.');window.location.href='formulario.php';</script>";
 }
 else{
-  $checkuser = mysqli_query($conn,"SELECT nombre FROM usuarios WHERE nombre='$nombre'"); 
-  $username_exist = mysqli_num_rows($checkuser); 
+  $checkdni = mysqli_query($conn,"SELECT dni FROM usuarios WHERE dni='$dni'"); 
+  $dni_exist = mysqli_num_rows($checkdni); 
   $checkemail = mysqli_query($conn,"SELECT email FROM usuarios WHERE email='$email'"); 
   $email_exist = mysqli_num_rows($checkemail);
   if ($email_exist>0) { 
             echo "<script>alert('El Email está en uso. Por favor, introducí un email diferente.');window.location.href='formulario.php';</script>"; 
              
-  }else{ 
+  }else{
+    if($dni_exist>0){
+      echo("<script>alert('Ahora tenés más de una cuenta en GRED, y podrás manejar dos sueldos simultaneamente. Si no es lo que buscabas, dirigite, en la pantalla principal, a tu MAIL, luego a PERFIL, y luego ELIMINAR CUENTA.');</script>");
       if (mysqli_query($conn, $sql)) {
-        $mensaje="";
-        include('correo/envioCorreo.php');
-          $email = new email("Gabriel","gabrielpereyra1997@gmail.com","156737353842720521");
-          $email->agregar($_POST['email']);
+      $mensaje="";
+      include('correo/envioCorreo.php');
+        $email = new email("Gabriel","gabrielpereyra1997@gmail.com","156737353842720521");
+        $email->agregar($_POST['email']);
+              
+        if ($email->enviar('Activación de tu cuenta GRED',$contenido_html)){
                 
-          if ($email->enviar('Activación de tu cuenta GRED',$contenido_html)){
-                  
-              $mensaje= 'Mensaje enviado';
-              echo $mensaje;    
-          }else{
-                   
-             $mensaje= 'El mensaje no se pudo enviar';
-             $email->ErrorInfo;
-             echo $mensaje; 
-          }    
-        echo "<script>alert('Te registraste correctamente. Consultá tu mail para obtener el link de activación de tu cuenta.');window.location.href='pantalla_login.php';</script>"; 
+            $mensaje= 'Mensaje enviado';
+            echo $mensaje;    
+        }else{
+                 
+           $mensaje= 'El mensaje no se pudo enviar';
+           $email->ErrorInfo;
+           echo $mensaje; 
+        }    
+      echo "<script>alert('Te registraste correctamente. Consultá tu mail para obtener el link de activación de tu cuenta.');window.location.href='pantalla_login.php';</script>"; 
       }
       else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      } 
+    }
+    else{
+      if (mysqli_query($conn, $sql)) {
+      $mensaje="";
+      include('correo/envioCorreo.php');
+        $email = new email("Gabriel","gabrielpereyra1997@gmail.com","156737353842720521");
+        $email->agregar($_POST['email']);
+              
+        if ($email->enviar('Activación de tu cuenta GRED',$contenido_html)){
+                
+            $mensaje= 'Mensaje enviado';
+            echo $mensaje;    
+        }else{
+                 
+           $mensaje= 'El mensaje no se pudo enviar';
+           $email->ErrorInfo;
+           echo $mensaje; 
+        }    
+      echo "<script>alert('Te registraste correctamente. Consultá tu mail para obtener el link de activación de tu cuenta.');window.location.href='pantalla_login.php';</script>"; 
       }
-            
+      else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      } 
+    }        
   }
 }
   

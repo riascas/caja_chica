@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2018 a las 08:21:53
+-- Tiempo de generación: 13-11-2018 a las 15:28:05
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -152,18 +152,18 @@ CREATE TABLE `usuarios` (
   `DNI` varchar(11) NOT NULL,
   `CONTRASENA` varchar(12) NOT NULL,
   `EMAIL` varchar(50) NOT NULL,
-  `ID_SESION` int(11) NOT NULL
+  `ID_SESION` int(11) NOT NULL,
+  `ID_CONFIRMADO` int(11) NOT NULL,
+  `ID_UNICO` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID_USUARIO`, `NOMBRE`, `APELLIDO`, `DNI`, `CONTRASENA`, `EMAIL`, `ID_SESION`) VALUES
-(16, 'Ruth', 'Iascas', '36521948', '123', 'ruth.iascas@gmail.com', 0),
-(17, 'Ruth', 'Iascas', '36521948', 'ruth123', 'ruth.iascas@gmail.com', 0),
-(18, 'asd', 'sadasd', '36521948', '123', 'ruth.iascas@gmail.com', 0),
-(19, 'ale', 'galarza', '35998613', 'sysone.0', 'agalarza@sysone.com', 0);
+INSERT INTO `usuarios` (`ID_USUARIO`, `NOMBRE`, `APELLIDO`, `DNI`, `CONTRASENA`, `EMAIL`, `ID_SESION`, `ID_CONFIRMADO`, `ID_UNICO`) VALUES
+(101, 'Gabriel', 'Pereyra', '40672909', 'GabiAle97', 'Gabrielpereyra1997@gmail.com', 1, 1, '5be9bbb90ecae'),
+(102, 'Gabriel', 'Pereyra', '40672909', 'GabiAle97', 'gabi_pereyra97@hotmail.com', 1, 1, '5be9bbf95a1ef');
 
 --
 -- Índices para tablas volcadas
@@ -265,7 +265,7 @@ ALTER TABLE `servicios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_USUARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID_USUARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- Restricciones para tablas volcadas
